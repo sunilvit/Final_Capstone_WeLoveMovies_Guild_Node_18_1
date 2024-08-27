@@ -1,5 +1,8 @@
 const knex = require("../db/connection");
 
+/*
+Function to list movies which are currently showing in theaters.
+ */
 async function list(is_showing) {
   return knex("movies")
     .select("movies.*")
@@ -17,6 +20,9 @@ async function list(is_showing) {
     });
 }
 
+/*
+Function to read specific MovieId
+ */
 async function read(movie_id) {
   return knex("movies")
       .select("*")
