@@ -5,6 +5,9 @@ const methodNotAllowed = require("../errors/methodNotAllowed");
 const reviewsRouter = require("../reviews/reviews.router");
 const theatersRouter = require("../theaters/theaters.router");
 
+router.use("/:movieId([0-9]+)/theaters", theatersRouter);
+router.use("/:movieId([0-9]+)/reviews", reviewsRouter);
+
 router.route("/")
     .get(controller.list)
     .all(methodNotAllowed);
